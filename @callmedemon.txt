@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login Page by Spayo</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                flex-direction: column;
+                overflow: hidden;
+                animation: scrollAnimation 10s linear infinite;
+            }
+
+            @keyframes scrollAnimation {
+                0% { background-position: 0 0; }
+                100% { background-position: 0 100%; }
+            }
+
+            .login-container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                text-align: center;
+                animation: fadeIn 2s ease-in-out;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+            footer {
+                text-align: center;
+                margin-top: 20px;
+                color: #777;
+            }
+
+            footer a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+            footer a:hover {
+                text-decoration: underline;
+            }
+
+            .button-clicked {
+                transform: scale(0.95);
+                transition: transform 0.1s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <h1>Login</h1>
+            <form>
+                <p>First name</p>
+                <input type="text" name="first_name" placeholder="Enter first name" required><br>
+                <p>Last name</p>
+                <input type="text" name="last_name" placeholder="Enter last name" required><br>
+                <p>Email</p>
+                <input type="email" name="email" placeholder="Enter email" required><br>
+                <p>Password</p>
+                <input type="password" name="password" placeholder="Enter password" required><br>
+                <button type="submit" id="loginButton">Login</button>
+            </form>
+        </div>
+        <footer>
+            <p>&copy; 2025 Spayo. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:info@spayo.com">info@spayo.com</a></p>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const loginButton = document.getElementById('loginButton');
+
+                loginButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    loginButton.classList.add('button-clicked');
+                    setTimeout(function() {
+                        loginButton.classList.remove('button-clicked');
+                    }, 300);
+                });
+            });
+        </script>
+    </body>
+</html>
